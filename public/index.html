@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Node Chat</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #chat {
+        height: calc(100% - 64px);
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        list-style-type: none;
+        overflow-y: scroll;
+      }
+      #chat li {
+        padding: 1em;
+      }
+      #chat li:nth-child(odd) {
+        background: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Chat -->
+    <ul id="chat"></ul>
+
+    <!-- Send a message -->
+    <form id="send" action="" autocomplete="off">
+      <div class="input-group p-2">
+        <input
+          id="messag"
+          class="form-control form-control-lg"
+          type="text"
+          placeholder="Envoyer un message"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-lg btn-primary" type="submit">Envoyer</button>
+        </div>
+      </div>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+  </body>
+</html>
